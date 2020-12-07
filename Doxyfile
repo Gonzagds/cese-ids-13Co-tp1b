@@ -1,0 +1,12 @@
+#en este archivo debo configurar doxygen, funciona similar
+#al archivo Makefile para make.
+
+OUTPUT_DIRECTORY = ./doc
+
+OUTPUT_LANGUAGE = Spanish
+
+GENERATE_LATEX = NO
+
+INPUT = /.
+INPUT += ./src
+INPUT += ./inc
