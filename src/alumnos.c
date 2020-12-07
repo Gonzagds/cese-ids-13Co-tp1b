@@ -52,6 +52,16 @@ const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
 
 /*=====[Implementations of interrupt functions]==============================*/
 
+/**
+@SerializarAlumno()
+Toma los datos de un alumno y los imprime con un formato determinado para
+ser mostrados en pantalla.
+cadena: puntero al buffer de salida donde se imprimirán los datos.
+espacio: máximo numero de caracters a imprimir en buffer
+alumno: estructura que contiene los datos del alumno.
+
+return: verdadero si se imprimió algun caracter o falso en caso contrario.
+*/
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno) {
     int resultado;
     const char FORMATO[] = "{"
@@ -66,6 +76,16 @@ bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno) {
     return (resultado >= 0);
 }
 
+/**
+@SerializarAlumnos()
+Toma los datos de todos los alumnos y los imprime con un formato determinado para
+ser mostrados en pantalla agregando una cabecera al comienzo.
+cadena: puntero al buffer de salida donde se imprimirán los datos.
+espacio: máximo numero de caracters a imprimir en buffer
+
+return: verdadero si se imprimieron los datos de todos los alumnos  o falso en 
+caso contrario.
+*/
 bool SerializarAlumnos(char * cadena, size_t espacio) {
     static const int  cantidad = sizeof(ALUMNOS) / sizeof(alumno_t);
     int posicion = snprintf(cadena, espacio, "[\r\n  ");

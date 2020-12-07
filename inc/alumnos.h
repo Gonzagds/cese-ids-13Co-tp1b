@@ -39,8 +39,28 @@ typedef struct alumno_s {
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
+/**
+SerializarAlumno()
+Toma los datos de un alumno y los imprime con un formato determinado para
+ser mostrados en pantalla.
+cadena: puntero al buffer de salida donde se imprimirán los datos.
+espacio: máximo numero de caracters a imprimir en buffer
+alumno: estructura que contiene los datos del alumno.
+
+return: verdadero si se imprimió algun caracter o falso en caso contrario.
+*/
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno);
 
+/**
+@SerializarAlumnos()
+Toma los datos de todos los alumnos y los imprime con un formato determinado para
+ser mostrados en pantalla agregando una cabecera al comienzo.
+cadena: puntero al buffer de salida donde se imprimirán los datos.
+espacio: máximo numero de caracters a imprimir en buffer
+
+return: verdadero si se imprimieron los datos de todos los alumnos  o falso en 
+caso contrario.
+*/
 bool SerializarAlumnos(char * cadena, size_t espacio);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
